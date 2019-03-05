@@ -31,6 +31,17 @@ Java_com_tuskantech_talkboy_share_VideoCreator_StopProcess(JNIEnv *env, jobject 
     stop_process = 1;
 }
 
+JavaVM* javaVM = NULL;
+jclass activityClass;
+jobject activityObj;
+void broadcastStatus(char *status){
+    JNIEnv *env;
+    (*javaVM)->AttachCurrentThread(javaVM, &env, NULL);
+    jstring jstringStatus = (*env)->NewStringUTF(env, status);
+    jmethodID method = (*env)->GetMethodID(env, activityClass, "broadcastEncodingStatus", "(Ljava/lang/String;)V");
+    (*env)->CallVoidMethod(env, activityObj, method, jstringStatus);
+}
+
 JNIEXPORT jint JNICALL
 Java_com_tuskantech_talkboy_share_VideoCreator_RunCommand(JNIEnv *env,
                                                     jobject obj/* this */,
