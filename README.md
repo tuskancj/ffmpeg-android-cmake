@@ -1,5 +1,7 @@
 # ffmpeg-android-cmake
-Build ffmpeg with x264 for Android armeabi-v7a, arm64-v8a, x86, and x86_64 architectures utilizing CMake to compile into native libraries.  This code is used by the [Talkboy](https://play.google.com/store/apps/details?id=com.tuskantech.talkboy) app available in the Google Play Store.  It strictly creates mp4 videos by looping a single image with a clip of audio using a single ffmpeg command.
+Build ffmpeg with x264 for Android armeabi-v7a, arm64-v8a, x86, and x86_64 architectures utilizing CMake to compile into native libraries.  This code is used by the [Talkboy](https://play.google.com/store/apps/details?id=com.tuskantech.talkboy) app available in the Google Play Store.  It strictly creates mp4 videos by looping a single image with a clip of audio using a single ffmpeg command:
+
+![](talkboy_gif.gif)
 
 ## About
 This project uses ffmpeg 3.2.12 and NDK r14b which are older versions, but they accomplish the simple task I needed done.
