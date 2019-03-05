@@ -209,6 +209,6 @@ First off, if you look in the app/src/main/cpp/ffmpeg folder, you'll see that th
 - libavutil/log.c (logging and status updates)
 
 ## Conclusion
-There is a LOT going on here.  I'm sure I've missed a few things or can expand on some steps, so please let me know if there are any questions and I'll do my best to recall these exciting times.  Shoutout to @madhavanmalolan as his repository was very useful in logging technique and structure (although he used Android.mk instead of CMake).
+There is a LOT going on here.  I'm sure I've missed a few things or can expand on some steps, so please let me know if there are any questions and I'll do my best to recall these exciting times.  Shoutout to [madhavanmalolan](https://github.com/madhavanmalolan/ffmpegandroidlibrary) as his repository was very useful in logging technique and structure (although he used Android.mk instead of CMake).
 
 C.J.
