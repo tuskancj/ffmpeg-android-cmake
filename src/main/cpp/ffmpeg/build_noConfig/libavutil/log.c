@@ -327,6 +327,29 @@ void av_log_default_callback(void* ptr, int level, const char* fmt, va_list vl)
     //Talkboy logging
     LOGI("%s%s%s%s", part[0].str, part[1].str, part[2].str, part[3].str);
 
+    //Talkboy FFMPEG STATUS
+    /* the duration of the audio file will show up first
+     * (actually since the image is the first input, it will show up as N/A)
+     * so need to grab the second Duration:
+     * this string will resemble something like this:
+     * 00:00:04.85*/
+    if(durationFlag){
+        if (strstr(part[3].str, "N/A") == NULL) {
+            broadcastStatus(part[3].str);
+        }
+        durationFlag = 0;
+    }
+    if (strstr(part[3].str, "Duration:") != NULL) {
+        durationFlag = 1;
+    }
+
+    /* send the time strings so the status of encoding can be updated in real time
+     * the string will resemble something like this:
+     * frame=   49 fps= 19 q=0.0 size=       0kB time=00:00:02.71 bitrate=   0.0kbits/s dup=45 drop=0 speed=1.05x
+     * where the 00:00:02.71 will be parsed out*/
+    if (strstr(part[3].str, "time=") != NULL) {
+        broadcastStatus(part[3].str);
+    }
 
 #if HAVE_ISATTY
     if (!is_atty)
