@@ -579,6 +579,7 @@ extern AVBufferRef *hw_device_ctx;
 /*Talkboy methods:*/
 void kill_program();
 int stop_process;
+void broadcastStatus(char *status);
 
 void term_init(void);
 void term_exit(void);
