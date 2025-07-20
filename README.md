@@ -1,5 +1,5 @@
 # ffmpeg-android-cmake
-FFmpeg is used by the [Talkboy](https://play.google.com/store/apps/details?id=com.tuskantech.talkboy) app available in the Google Play Store.  It creates mp4 videos by looping a single image with a clip of audio using a single ffmpeg command:
+FFmpeg was used by the Talkboy app previously available on the Google Play Store.  It created mp4 videos by looping a single image with a clip of audio using a single ffmpeg command:
 
 ![](talkboy_gif.gif)
 
